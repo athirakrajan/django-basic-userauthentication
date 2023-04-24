@@ -1,0 +1,40 @@
+<style>
+    .box {
+        background: paleturquoise;
+        height: 500px;
+        width: 500px;
+        text-align: center;
+    }
+
+    .name {
+        font-size: 35px;
+        padding-left: 10px;
+        padding-top: 30px;
+    }
+
+    h1 {
+        font-size: 50px;
+    }
+
+    button {
+        padding-right: 50px;
+        padding-top: 2px;
+
+    }
+</style>
+
+
+<div class="box">
+    <h1>FACEBOOK SIGNIN</h1>
+
+    <form action="{%url 'signin'%}" method="POST" class="name">
+        {% csrf_token %}
+        <label for="">username</label>
+        <input name="username" type="text" placeholder="user_name" required=""><br>
+        <label for="">password</label>
+        <input name="password" type="password" placeholder="password" required><br>
+        <button type="submit" class="button">signin</button><br>
+        <p>Don't have an account?<a href="{%url 'signup'%}">Register</a></p>
+    </form>
+
+</div>

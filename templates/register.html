@@ -1,0 +1,51 @@
+<h1>hai</h1>
+<style>
+    .box {
+        background: paleturquoise;
+        height: 700px;
+        width: 500px;
+        text-align: center;
+    }
+
+    .name {
+        font-size: 32px;
+        padding-left: 10px;
+        padding-top: 30px;
+
+    }
+
+    h1 {
+        font-size: 50px;
+    }
+
+    button {
+        padding-right: 50px;
+        padding-top: 2px;
+
+    }
+</style>
+<div class="box">
+    <h1>FACEBOOK SIGN UP</h1>
+    <form action="{%url 'signup'%}" method="POST">
+        {%csrf_token%}
+        <form action="" class="name">
+            <label for="">firstname</label>
+            <input name="first_name" type="text" placeholder="firstname" required=""><br><br>
+            <label for="">lastname</label>
+            <input name="last_name" type="text" placeholder="lastname" required><br><br>
+            <label for="">username</label>
+            <input name="username" type="text" placeholder="username"><br><br>
+            <label for="">email</label>
+            <input name="email" type="email" placeholder=" email"><br><br>
+            <label for="">password</label>
+            <input name="password" type="password" placeholder="password" required><br><br>
+            <label for="">confirmpassword</label>
+            <input name="confirm_password" type="password" placeholder="confirmpassword"><br><br>
+            <button type="submit" class="button">register</button>
+            <p>Already have a account?<a href="{%url 'signin'%}">Login </a></p>
+        </form>
+    </form>
+    {% for message in messages %}
+    <h1 style="color: purple;">{{message}}</h1>
+    {% endfor %}
+</div>
