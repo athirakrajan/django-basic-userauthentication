@@ -43,6 +43,9 @@ def signin(request):
             auth.login(request,user)
             return redirect("home")
 
+        else:messages.info(request,"invalid username or password")
+        return redirect("signin")
+
     return render(request,"login.html")
 
 def logout(request):
